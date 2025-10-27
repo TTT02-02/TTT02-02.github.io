@@ -1,10 +1,206 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>田蕊萌的网页</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>田蕊萌 - 云计算与分布式系统实验二</title>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            font-family: 'Crimson Pro', serif;
+            color: #333;
+        }
+        
+        .elegant-card {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(93, 64, 135, 0.15);
+            padding: 50px 40px;
+            max-width: 700px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(147, 112, 219, 0.2);
+        }
+        
+        .elegant-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #9c7fe4, #d4af37, #9c7fe4);
+        }
+        
+        .elegant-card::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23d4af37" opacity="0.1"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+            background-size: contain;
+            z-index: 0;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4rem;
+            color: #5d4087;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        .content {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .name {
+            color: #9c7fe4;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(156, 127, 228, 0.2);
+        }
+        
+        .course {
+            color: #5d4087;
+            font-weight: 600;
+        }
+        
+        .teacher {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .divider {
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 25px auto;
+        }
+        
+        .footer {
+            font-size: 1rem;
+            color: #777;
+            margin-top: 30px;
+            position: relative;
+            z-index: 1;
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+        
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(156, 127, 228, 0.1);
+            z-index: 0;
+        }
+        
+        .floating-1 {
+            width: 120px;
+            height: 120px;
+            top: -40px;
+            left: -40px;
+            animation: float 20s infinite linear;
+        }
+        
+        .floating-2 {
+            width: 80px;
+            height: 80px;
+            bottom: -20px;
+            right: -20px;
+            animation: float 15s infinite linear reverse;
+        }
+        
+        @keyframes fadeInDown {
+            from { 
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from { 
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(10px, -10px) rotate(120deg); }
+            66% { transform: translate(-5px, 5px) rotate(240deg); }
+            100% { transform: translate(0, 0) rotate(360deg); }
+        }
+        
+        @media (max-width: 600px) {
+            .elegant-card {
+                padding: 40px 25px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .content {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>你好，我是田蕊萌</h1>
-    <p>这是我的云计算与分布式系统实验二</p>
+    <div class="elegant-card">
+        <div class="floating-element floating-1"></div>
+        <div class="floating-element floating-2"></div>
+        
+        <h1>云计算与分布式系统实验二</h1>
+        <div class="content">
+            我是<span class="name">田蕊萌</span>，这是我的<br>
+            <span class="course">云计算与分布式系统实验二</span>作业。
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="content">
+            授课教师：<span class="teacher">李海生教授</span>
+        </div>
+        
+        <div class="footer">
+            优雅风格设计 | 响应式布局
+        </div>
+    </div>
 </body>
 </html>
